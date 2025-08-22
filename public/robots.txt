@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sproutandstar.com/sitemap.xml
+
+# Disallow admin/internal pages (add as needed)
+# Disallow: /admin/
+# Disallow: /_internal/
+
+# Crawl delay (optional)
+# Crawl-delay: 1

@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Custom Properties for theming */
+:root {
+  /* Light theme colors */
+  --mh-bg: #f7faf9;
+  --mh-surface: #ffffff;
+  --mh-primary: #2d6a6a;
+  --mh-accent: #86b6b3;
+  --mh-ink: #23302f;
+  --mh-muted: #5b6d6b;
+  --mh-border: #e5e7e6;
+  --mh-error: #dc2626;
+  --mh-success: #059669;
+  --mh-warning: #d97706;
+  
+  /* Shadows */
+  --mh-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --mh-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --mh-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Focus ring */
+  --mh-focus-ring: 0 0 0 2px var(--mh-primary);
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mh-bg: #0f1716;
+    --mh-surface: #1a201f;
+    --mh-primary: #86b6b3;
+    --mh-accent: #5a8e8a;
+    --mh-ink: #e5f0ef;
+    --mh-muted: #9ca8a6;
+    --mh-border: #2d3635;
+    --mh-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+    --mh-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --mh-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  }
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  body {
+    @apply bg-mh-bg text-mh-ink font-sans antialiased;
+    line-height: 1.6;
+  }
+  
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply absolute left-4 top-4 z-50 transform -translate-y-16 bg-mh-primary text-white px-4 py-2 rounded;
+    @apply focus:translate-y-0 transition-transform duration-200;
+  }
+  
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid var(--mh-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold text-mh-ink;
+    line-height: 1.3;
+  }
+  
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+  h2 { @apply text-3xl md:text-4xl lg:text-5xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  h4 { @apply text-xl md:text-2xl; }
+  h5 { @apply text-lg md:text-xl; }
+  h6 { @apply text-base md:text-lg; }
+  
+  /* Links */
+  a {
+    @apply text-mh-primary underline decoration-mh-accent-500 hover:decoration-mh-primary;
+    @apply transition-colors duration-200;
+  }
+  
+  /* Form elements */
+  input, textarea, select {
+    @apply bg-mh-surface border-mh-border text-mh-ink;
+    @apply focus:border-mh-primary focus:ring-2 focus:ring-mh-primary-200;
+  }
+  
+  /* Lists */
+  ul, ol {
+    @apply space-y-2;
+  }
+  
+  /* Images */
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Button variants */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg;
+    @apply transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply btn bg-mh-primary text-white hover:bg-mh-primary-900;
+    @apply focus:ring-mh-primary shadow-sm hover:shadow;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-mh-surface text-mh-primary border-2 border-mh-primary;
+    @apply hover:bg-mh-primary hover:text-white focus:ring-mh-primary;
+  }
+  
+  .btn-accent {
+    @apply btn bg-mh-accent text-white hover:bg-mh-accent-900;
+    @apply focus:ring-mh-accent shadow-sm hover:shadow;
+  }
+  
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+  
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-mh-surface rounded-xl border border-mh-border p-6;
+    box-shadow: var(--mh-shadow);
+  }
+  
+  .card-hover {
+    @apply card transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  /* Section container */
+  .section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .section-sm {
+    @apply py-12 md:py-16;
+  }
+  
+  .section-lg {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+  
+  /* Container max widths */
+  .container-sm {
+    @apply max-w-2xl mx-auto px-4 sm:px-6;
+  }
+  
+  .container-md {
+    @apply max-w-4xl mx-auto px-4 sm:px-6;
+  }
+  
+  .container-lg {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-xl {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Text utilities */
+  
+  /* Emergency banner */
+  .emergency-banner {
+    @apply bg-mh-error text-white py-2 px-4 text-sm text-center relative;
+  }
+  
+  /* Form styles */
+  .form-group {
+    @apply space-y-2;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-mh-ink;
+  }
+  
+  .form-input {
+    @apply w-full px-3 py-2 border border-mh-border rounded-lg bg-mh-surface text-mh-ink;
+    @apply focus:outline-none focus:ring-2 focus:ring-mh-primary focus:border-mh-primary;
+    @apply transition-colors duration-200;
+  }
+  
+  .form-textarea {
+    @apply form-input min-h-[6rem];
+    resize: vertical;
+  }
+  
+  .form-error {
+    @apply text-mh-error text-sm mt-1;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply text-mh-ink hover:text-mh-primary transition-colors duration-200;
+    @apply no-underline font-medium relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--mh-primary);
+    transition: width 0.2s ease-in-out;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link:focus::after {
+    width: 100%;
+  }
+  
+  .nav-link-active {
+    @apply nav-link text-mh-primary;
+  }
+  
+  /* Header backdrop */
+  .header-backdrop {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .header-backdrop {
+      background-color: rgba(26, 32, 31, 0.95);
+    }
+  }
+  
+  /* Logo hover effect */
+  .logo-link:hover div {
+    background-color: var(--mh-accent);
+  }
+}

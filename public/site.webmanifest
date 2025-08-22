@@ -1,0 +1,23 @@
+{
+  "name": "Sprout & Star Mental Health",
+  "short_name": "Sprout & Star",
+  "description": "Professional early childhood mental health services",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2d6a6a",
+  "background_color": "#f7faf9",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "/",
+  "scope": "/"
+}

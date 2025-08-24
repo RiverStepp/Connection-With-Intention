@@ -81,6 +81,41 @@
       </template>
     </Section>
 
+    <!-- Art Gallery - Calming Spaces -->
+    <Section
+      title="Creating Calming Spaces"
+      subtitle="Therapeutic Environment" 
+      description="Our office features carefully selected artwork that creates a peaceful, welcoming atmosphere for children and families."
+      background="muted"
+      size="md"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Placeholder for artwork images -->
+        <div 
+          v-for="n in 3" 
+          :key="`art-${n}`"
+          class="bg-mh-surface rounded-lg aspect-square flex items-center justify-center border-2 border-dashed border-mh-border hover:border-mh-primary transition-colors"
+        >
+          <div class="text-center">
+            <Icon
+              icon="lucide:image"
+              class="w-12 h-12 text-mh-muted mx-auto mb-2"
+              aria-hidden="true"
+            />
+            <p class="text-sm text-mh-muted">Artwork Placeholder {{ n }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <template #footer>
+        <div class="text-center">
+          <p class="text-mh-muted italic">
+            "Art has the power to soothe, inspire, and create connections - essential elements in healing spaces."
+          </p>
+        </div>
+      </template>
+    </Section>
+
     <!-- Why Choose Us -->
     <Section
       title="Why Families Choose Us"
@@ -150,6 +185,59 @@
           >
             Read More Testimonials
           </CTAButton>
+        </div>
+      </template>
+    </Section>
+
+    <!-- Inspirational Art Gallery -->
+    <Section
+      title="Art That Inspires Connection"
+      subtitle="Gallery"
+      description="Beautiful paintings that remind us of the importance of human connection, growth, and healing."
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Left side - larger featured artwork -->
+        <div class="bg-mh-surface rounded-xl p-6 border-2 border-dashed border-mh-border hover:border-mh-primary transition-colors">
+          <div class="aspect-[4/3] flex items-center justify-center mb-4">
+            <div class="text-center">
+              <Icon
+                icon="lucide:palette"
+                class="w-16 h-16 text-mh-muted mx-auto mb-3"
+                aria-hidden="true"
+              />
+              <p class="text-lg text-mh-muted font-medium">Featured Artwork</p>
+              <p class="text-sm text-mh-muted">Large inspirational piece</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right side - smaller artworks grid -->
+        <div class="grid grid-cols-2 gap-4">
+          <div 
+            v-for="n in 4" 
+            :key="`featured-art-${n}`"
+            class="bg-mh-surface rounded-lg aspect-square flex items-center justify-center border-2 border-dashed border-mh-border hover:border-mh-primary transition-colors"
+          >
+            <div class="text-center">
+              <Icon
+                icon="lucide:paintbrush"
+                class="w-8 h-8 text-mh-muted mx-auto mb-1"
+                aria-hidden="true"
+              />
+              <p class="text-xs text-mh-muted">Art {{ n }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <template #footer>
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="text-mh-muted italic mb-4">
+            "Every piece in our space is chosen to create an atmosphere of warmth, hope, and possibility."
+          </p>
+          <p class="text-sm text-mh-muted">
+            Our client has a deep appreciation for paintings and believes art plays a vital role in creating therapeutic environments that promote healing and connection.
+          </p>
         </div>
       </template>
     </Section>

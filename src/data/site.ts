@@ -37,12 +37,12 @@ export interface SiteData {
 
 // TODO: Update with actual practice information
 export const siteData: SiteData = {
-  name: 'Sprout & Star Mental Health',
+  name: 'Connection With Intention',
   tagline: 'Nurturing Young Minds, Supporting Families',
   description: 'Professional mental health services specializing in early childhood development. Compassionate, evidence-based therapy for children and families.',
-  url: 'https://sproutandstar.com', // TODO: Update with actual domain
+  url: 'https://connectionwithintention.com', // TODO: Update with actual domain
   phone: '(555) 123-4567', // TODO: Update with actual phone number
-  email: 'hello@sproutandstar.com', // TODO: Update with actual email
+  email: 'hello@connectionwithintention.com', // TODO: Update with actual email
   
   address: {
     street: '123 Healing Way, Suite 200', // TODO: Update with actual address
@@ -64,9 +64,9 @@ export const siteData: SiteData = {
   
   social: {
     // TODO: Add actual social media links if applicable
-    facebook: 'https://facebook.com/sproutandstar',
-    instagram: 'https://instagram.com/sproutandstar',
-    linkedin: 'https://linkedin.com/company/sproutandstar'
+    facebook: 'https://facebook.com/connectionwithintention',
+    instagram: 'https://instagram.com/connectionwithintention',
+    linkedin: 'https://linkedin.com/company/connectionwithintention'
   },
   
   services: {

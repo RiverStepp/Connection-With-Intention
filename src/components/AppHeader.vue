@@ -14,7 +14,7 @@
         <router-link
           to="/"
           class="flex items-center gap-3 text-mh-ink hover:text-mh-primary transition-colors no-underline logo-link"
-          aria-label="Sprout & Star Mental Health - Home"
+          aria-label="Connection With Intention - Home"
         >
           <div class="w-10 h-10 bg-mh-primary rounded-lg flex items-center justify-center transition-colors">
             <Icon
@@ -189,8 +189,10 @@ function handleRouteChange() {
 function handleClickOutside(event: Event) {
   const target = event.target as Element
   const mobileMenu = document.getElementById(mobileMenuId)
+  const mobileMenuButton = document.querySelector('[aria-controls="' + mobileMenuId + '"]')
   
-  if (isMobileMenuOpen.value && mobileMenu && !mobileMenu.contains(target)) {
+  if (isMobileMenuOpen.value && mobileMenu && !mobileMenu.contains(target) && 
+      mobileMenuButton && !mobileMenuButton.contains(target)) {
     closeMobileMenu()
   }
 }

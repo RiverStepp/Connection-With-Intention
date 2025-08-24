@@ -4,14 +4,14 @@
 
 /* CSS Custom Properties for theming */
 :root {
-  /* Light theme colors */
-  --mh-bg: #f7faf9;
+  /* Light theme colors - Professional therapy palette */
+  --mh-bg: #fafbfc;
   --mh-surface: #ffffff;
-  --mh-primary: #2d6a6a;
-  --mh-accent: #86b6b3;
-  --mh-ink: #23302f;
-  --mh-muted: #5b6d6b;
-  --mh-border: #e5e7e6;
+  --mh-primary: #4a90e2;
+  --mh-accent: #7bb3f0;
+  --mh-ink: #2c3e50;
+  --mh-muted: #64748b;
+  --mh-border: #e1e8ed;
   --mh-error: #dc2626;
   --mh-success: #059669;
   --mh-warning: #d97706;
@@ -25,21 +25,7 @@
   --mh-focus-ring: 0 0 0 2px var(--mh-primary);
 }
 
-/* Dark theme support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --mh-bg: #0f1716;
-    --mh-surface: #1a201f;
-    --mh-primary: #86b6b3;
-    --mh-accent: #5a8e8a;
-    --mh-ink: #e5f0ef;
-    --mh-muted: #9ca8a6;
-    --mh-border: #2d3635;
-    --mh-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
-    --mh-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
-    --mh-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-  }
-}
+/* Light mode only for professional therapy appearance */
 
 /* Base styles */
 @layer base {
@@ -248,12 +234,6 @@
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .header-backdrop {
-      background-color: rgba(26, 32, 31, 0.95);
-    }
   }
   
   /* Logo hover effect */
